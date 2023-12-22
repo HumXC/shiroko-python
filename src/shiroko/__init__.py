@@ -1,1 +1,2 @@
-from ..client import *
+from .._zeroconf import FindServer
+from ..client import Client, Manager

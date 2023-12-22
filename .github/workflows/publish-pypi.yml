@@ -23,7 +23,7 @@ jobs:
 
             - name: Generate protos
               run: >-
-                  ./gen_protos.sh
+                  python ./gen_protos.py
 
             - name: Build a binary wheel and a source tarball
               run: >-

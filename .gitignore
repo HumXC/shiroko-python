@@ -1,7 +1,6 @@
 __pycache__
 /.vscode
 /.venv
-/src/protos/*
-!/src/protos/__init__.py
+/src/protos
 /test*
 /dist
