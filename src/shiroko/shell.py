@@ -79,13 +79,13 @@ class Shell:
         resp: shell.ListAppsResponse = self.stub.ListApps(common.Empty())
         return resp.apps
 
-    def StartApp(self, active):
+    def StartApp(self, activity):
         """启动一个应用，参考安卓命令: "am start"。
 
         Args:
             active (str): 启动的参数，<包名/Active路径>
         """
-        _ = self.stub.StartApp(shell.StartAppRequest(active=active))
+        _ = self.stub.StartApp(shell.StartAppRequest(activity=activity))
 
     def StopApp(self, pkgname):
         """终止一个应用。

@@ -1,5 +1,3 @@
-from enum import Enum
-
 import grpc
 
 class Keycodes:

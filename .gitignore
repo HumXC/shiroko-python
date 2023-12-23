@@ -1,6 +1,6 @@
 __pycache__
 /.vscode
 /.venv
-/src/protos
+/src/shiroko/protos
 /test*
 /dist

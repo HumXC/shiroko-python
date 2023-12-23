@@ -57,5 +57,5 @@ def generate_grpc_code(proto_dir, out_dir):
 
 if __name__ == "__main__":
     PROTO_DIR = "./protos"
-    OUT_DIR = "./src"
+    OUT_DIR = "./src/shiroko"
     generate_grpc_code(PROTO_DIR, OUT_DIR)
