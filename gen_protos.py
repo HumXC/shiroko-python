@@ -38,6 +38,7 @@ def generate_grpc_code(proto_dir, out_dir):
                 f.write(f"from .{base_name}_pb2_grpc import *\n")
             # 修改生成的文件的包导入
             # 将 "from protos" 替换为 "from ."
+            # 在头部添加 "# type: ignore"
             pb2_py = os.path.join(out_dir, "protos", base_name, f"{base_name}_pb2.py")
             pb2_pyi = pb2_py + "i"
             pb2_grpc_py = os.path.join(
@@ -48,7 +49,7 @@ def generate_grpc_code(proto_dir, out_dir):
                     content = f.read()
                     content = content.replace("from protos", "from .")
                 with open(file, "w", encoding="utf-8") as f:
-                    f.write(content)
+                    f.write("# type: ignore\n" + content)
     # 写入 protos/__init__.py
     with open(protos_init_file, "w", encoding="utf-8") as f:
         f.write(protos_init)
