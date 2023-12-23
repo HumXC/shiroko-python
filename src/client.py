@@ -4,6 +4,7 @@ from .input import Input
 from .manager import Manager
 from .screencap import Screencap
 from .shell import Shell
+from .window import Window
 
 
 class Client:
@@ -11,6 +12,7 @@ class Client:
     shell: Shell
     input: Input
     screencap: Screencap
+    window: Window
 
     def __init__(self, addr: str):
         ch = grpc.insecure_channel(addr)
@@ -18,3 +20,4 @@ class Client:
         self.shell = Shell(ch)
         self.input = Input(ch)
         self.screencap = Screencap(ch)
+        self.window = Window(ch)
